@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --brown: #3b2a23;
+  --gold: #c8a45d;
+  --cream: #f7f1e6;
+  --parchment: #efe3d3;
+  --sienna: #c65a3a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  background: var(--cream);
+  color: var(--brown);
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  background: var(--parchment);
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+nav h1 {
+  font-family: Fraunces;
+  color: var(--brown);
+  letter-spacing: 2px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--brown);
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+              url('https://images.unsplash.com/photo-1509440159596-0249088772ff') center/cover;
+  color: var(--cream);
+}
+
+.hero h1 {
+  font-family: Fraunces;
+  font-size: 60px;
+}
+
+.hero p {
+  margin-top: 10px;
+}
+
+/* PRODUCT GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 60px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.price {
+  color: var(--sienna);
+  font-weight: bold;
+}
+
+/* SECTION TITLE */
+.section-title {
+  text-align: center;
+  font-family: Fraunces;
+  margin-top: 40px;
+  font-size: 32px;
+}
+
+/* ABOUT */
+.about {
+  padding: 80px;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* CONTACT */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 50px auto;
+}
+
+input, textarea {
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+button {
+  background: var(--gold);
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* FADE ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.6s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+/* TABLET */
+@media (max-width: 992px) {
+  nav {
+    padding: 20px 30px;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .grid {
+    padding: 40px;
+    gap: 20px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav div {
+    margin-top: 10px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 14px;
+    padding: 0 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .about {
+    padding: 30px;
+  }
+}
